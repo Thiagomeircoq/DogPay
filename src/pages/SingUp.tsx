@@ -1,4 +1,3 @@
-import FormFooter from "../components/FormFooter";
 import FormHeader from "../components/FormHeader";
 import SignUpForm from "../components/SingUpForm";
 
@@ -8,7 +7,12 @@ export default function SignUp() {
             <FormHeader text='Sing Up' />
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <SignUpForm />
-                <FormFooter />
+                <p className="mt-10 text-center text-sm text-gray-500">
+                    Already have an account? {' '}
+                    <a href="#" className="font-semibold leading-6 text-blue-600 hover:text-blue-500">
+                        Login
+                    </a>
+                </p>
             </div>
         </div>
     );
