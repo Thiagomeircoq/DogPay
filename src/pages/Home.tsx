@@ -1,8 +1,7 @@
-import Login from "./Login";
-// import SingUp from "./SingUp";
+import IntroScreen from "./IntroScreen";
 
 export default function Home() {
     return (
-        <Login/>
+        <IntroScreen/>
     )
 }

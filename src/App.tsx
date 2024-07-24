@@ -1,10 +1,17 @@
-import Template from "./pages/Template";
-import Home from "./pages/Home";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import SignUp from './SignUp';
 
-export default function App() {
-    return (
-        <Template>
-            <Home />
-        </Template>
-    )
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/signup" component={SignUp} />
+      </Switch>
+    </Router>
+  );
 }
+
+export default App;
