@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { Toast, ToastToggle } from 'flowbite-react';
 import { HiCheck, HiExclamation } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 type SignUpFormData = z.infer<typeof UserSchema>;
 
@@ -26,6 +27,8 @@ const SignUpForm: React.FC = () => {
         try {
             const response = await axios.post('http://localhost:3100/auth/signup', data);
             if (response.status === 201) {
+                const token = response.data.token;
+                Cookies.set('token', token, { expires: 7 });
                 setToastData({ severity: 'success', message: 'Cadastro realizado com sucesso! Redirecionando para a tela de login...' });
                 setTimeout(() => {
                     navigate("/login");

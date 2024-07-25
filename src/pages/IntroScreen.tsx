@@ -1,5 +1,4 @@
 import DogPayIconWhite from '../assets/img/dogpay-white-icon.svg';
-import Button from '../components/Button';
 import Template from './Template';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,12 +23,12 @@ export default function IntroScreen() {
                     <div className="w-2 h-2 bg-blue-800 rounded-full"></div>
                 </div>
 
-                <Button
-                    className='bg-white text-blue-600 hover:text-blue-700 text-lg hover:bg-slate-100' 
-                    text='Get Started'
-                    onClick={handleGetStartedClick}
-                />
-                    
+                <button
+                    onClick={handleGetStartedClick}             
+                    className="inline-block cursor-pointer rounded-md bg-white px-4 py-3 text-center text-sm font-semibold text-blue-600 transition duration-200 ease-in-out hover:bg-slate-100">
+                    Get Started
+                </button>
+              
             </div>
         </Template>
     );
